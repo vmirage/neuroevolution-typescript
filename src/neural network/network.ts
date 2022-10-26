@@ -63,7 +63,10 @@ export class Network {
    * Returns array with the number of neurons in each layer and a flat array of all weights.
    */
   public getCopyOfTheNetwork(): INetworkData {
-    const data = {} as INetworkData;
+    const data = {
+      neurons: [],
+      weights: [],
+    } as INetworkData;
 
     for (const i in this.layers) {
       data.neurons.push(this.layers[i].getNeurons().length);
